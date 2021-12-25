@@ -1,6 +1,6 @@
 # Guitar-Chord-Editor
-🎸A simple guitar chord editor based on canvas
-you can editor online in [codepen](https://codepen.io/donghy1/pen/yLzzOLy).
+🎸A simple guitar chord editor based on canvas,
+You can view this project online [codepen](https://codepen.io/donghy1/pen/yLzzOLy).
 
 ## Screenshot
 
