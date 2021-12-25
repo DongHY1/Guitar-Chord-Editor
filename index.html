@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎸吉他和弦编辑器</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="card">
+        <header>
+            <h1>🎸吉他和弦编辑器</h1>
+            <div>
+                <button id="clear-button" >清空画布</button>
+                <button id="export-button" >导出和弦</button>
+            </div>
+        </header>
+        <div class="card_body">
+            <aside>
+                <label>自定义 ⚙️</label>
+                <div class="tileset-container">
+                    <img id="tileset-source" crossorigin />
+                    <form>
+                        和弦名字: <input id="chordText" placeholder="例如:C" />
+                        <br>
+                    </form>
+                    <form>
+                        指板位置: <input id="fretText" placeholder="例如:1th" />
+                        <br>
+                        <button id="add-button">添加和弦</button>
+                    </form>
+                </div>
+            </aside>
+            <div class="card_right-column">
+                <!-- The main canvas -->
+                <canvas width="480" height="480">
+                </canvas>
+                <p class="instructions">
+                    <strong>点击</strong> 绘制.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
