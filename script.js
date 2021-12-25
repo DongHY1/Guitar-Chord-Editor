@@ -10,7 +10,16 @@ const addButton = document.getElementById('add-button');
 let text = "C"
 let fret = "1th"
 const circles = [];
-//TODO：此处要用到节流
+function debounce(fun, delay) {
+  return function (args) {
+      let that = this
+      let _args = args
+      clearTimeout(fun.id)
+      fun.id = setTimeout(function () {
+          fun.call(that, _args)
+      }, delay)
+  }
+}
 function chordNameChange(e) {
   const target = e.target;
   text = target.value;
@@ -97,8 +106,8 @@ function exportImage() {
   const url = window.open("");
   url.document.write(image.outerHTML);
 }
-chordName.addEventListener('keyup', chordNameChange, false);
-fretName.addEventListener('keyup', fretNameChange, false);
+chordName.addEventListener('keyup',debounce(chordNameChange, 500), false);
+fretName.addEventListener('keyup',debounce(fretNameChange, 500), false);
 canvas.addEventListener('click', drawCircle, false);
 clearButton.addEventListener('click',clearCanvas,false);
 exportButton.addEventListener('click',exportImage,false);
