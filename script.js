@@ -11,14 +11,11 @@ let text = "C"
 let fret = "1th"
 const circles = [];
 function debounce(fun, delay) {
-  return function (args) {
-      let that = this
-      let _args = args
-      clearTimeout(fun.id)
-      fun.id = setTimeout(function () {
-          fun.call(that, _args)
-      }, delay)
-  }
+let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {fun.apply(this, args); }, delay);
+  };
 }
 function chordNameChange(e) {
   const target = e.target;
